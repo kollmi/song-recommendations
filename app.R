@@ -110,9 +110,6 @@ server <- function(input, output, session) {
       seed$artist.name[[i]] <- paste(unlist(seed$artists[[i]][3]), collapse = ", ")
     }
     
-    playlist.id <- search_spotify("TPM Workout", type = "playlist", offset = 7, limit = 1)[4]
-    observeEvent(input$create, add_tracks_to_playlist(playlist_id = playlist.id, uris = seed$uri)
-      
     )
     
   })
