@@ -68,15 +68,6 @@ ui <- fluidPage(theme = shinytheme("sandstone"),
 )
 
 server <- function(input, output, session) {
-  #next step: allow drop down when searching
-  #
-  #artist_name <- observe({
-  #  updateSelectInput(session, input$a.choices, label = "Artist Choices", choices = search_spotify(input$artist, type = "artist") %>% select(name))
-  #})
-  #track_name <- observe({
-    #updateSelectInput(session, input$t.choices, label = "Track Choices", choices = search_spotify(input$track, type = "track") %>% select(name))
-  #})
-  
   
   tree <- eventReactive(input$request, {
     artists <- if(input$artist == "") NULL else {search_spotify(input$artist, type = "artist", limit = 1) %>% select(id)}
@@ -128,7 +119,6 @@ server <- function(input, output, session) {
   
   output$results <- renderDataTable(tree())
   
-  #output$playlist <- renderPrint(search())
 
 }
 
