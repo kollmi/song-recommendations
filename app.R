@@ -5,8 +5,8 @@ library(shinythemes)
 library(spotifyr)
 library(DT)
 
-id <- '4d69a3e40c474ff8b0e3fcb9e20d9ebf'
-secret <- 'a649cf949f8c4045ad4da7b7efab86b2'
+id <- #redacted
+secret <- #redacted
 Sys.setenv(SPOTIFY_CLIENT_ID = id)
 Sys.setenv(SPOTIFY_CLIENT_SECRET = secret)
 access_token <- get_spotify_access_token()
